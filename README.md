@@ -28,15 +28,15 @@ Servidor Fastify com Drizzle ORM e PostgreSQL.
    npx drizzle-kit generate
    ```
 
-```
-   npx drizzle-kit migrate
-```
+   ```
+      npx drizzle-kit migrate
+   ```
 
 5. Popule o banco com dados fakes:
 
-```
-   npm run db:seed
-```
+   ```
+      npm run db:seed
+   ```
 
 ## Executando o servidor
 
