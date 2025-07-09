@@ -1,25 +1,21 @@
-import { fastify } from "fastify";
+import { fastifyCors } from '@fastify/cors';
+import { fastify } from 'fastify';
+import {
+  serializerCompiler,
+  validatorCompiler,
+  type ZodTypeProvider,
+} from 'fastify-type-provider-zod';
+import { env } from './env.ts';
 
-import { 
-    serializerCompiler,
-    validatorCompiler,
-    type ZodTypeProvider
- } from "fastify-type-provider-zod";
+const app = fastify().withTypeProvider<ZodTypeProvider>();
 
- import { fastifyCors } from "@fastify/cors";
-import { env } from "./env.ts";
+app.register(fastifyCors, {
+  origin: '*',
+});
 
- const app = fastify().withTypeProvider<ZodTypeProvider>()
+app.setSerializerCompiler(serializerCompiler);
+app.setValidatorCompiler(validatorCompiler);
 
- app.register(fastifyCors, {
-    origin: '*'
- })
+app.listen({ port: 3333 });
 
- app.setSerializerCompiler(serializerCompiler)
- app.setValidatorCompiler(validatorCompiler)
-
- app.listen({port:3333}, () => {
-    console.log('rodando')
- })
-
-app.listen({port:env.PORT})
+app.listen({ port: env.PORT });
