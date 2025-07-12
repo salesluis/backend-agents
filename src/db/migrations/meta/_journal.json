@@ -8,6 +8,13 @@
       "when": 1752019327052,
       "tag": "0000_demonic_warpath",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752245867326,
+      "tag": "0001_flimsy_talon",
+      "breakpoints": true
     }
   ]
 }

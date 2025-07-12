@@ -4,14 +4,17 @@ import { schema } from './schema/index.ts';
 
 async function main() {
   await reset(db, schema);
-  await seed(db, schema);
-  await seed(db, { rooms: schema.rooms }).refine((f) => ({
+
+  await seed(db, schema).refine((f) => ({
     rooms: {
-      count: 30,
+      count: 20,
       columns: {
         name: f.companyName(),
         description: f.loremIpsum(),
       },
+    },
+    questions: {
+      count: 20,
     },
   }));
   sql.end();
