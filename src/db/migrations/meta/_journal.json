@@ -15,6 +15,13 @@
       "when": 1752245867326,
       "tag": "0001_flimsy_talon",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752449449428,
+      "tag": "0002_sturdy_inertia",
+      "breakpoints": true
     }
   ]
 }
